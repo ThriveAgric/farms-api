@@ -6,8 +6,8 @@ sidebar_label: Farm
 
 ## Staging Base URL
 
-```
-https://thrive-farm-tracking.herokuapp.com/thr/project/v1
+```javascript
+"https://thrive-farm-tracking.herokuapp.com/thr/project/v1";
 ```
 
 Farm management consists of 2 Object Schemas:

@@ -13,7 +13,7 @@ https://thrive-farm-tracking.herokuapp.com/thr/project/v1/updates
 <br>
 ### Sample Farm Updates Schema
 
-```
+```javascript
     {
         project: {
             id: {
@@ -56,7 +56,7 @@ https://thrive-farm-tracking.herokuapp.com/thr/project/v1/updates
 
 ## Endpoint
 
-```
+```javascript
 /
 ```
 
@@ -70,7 +70,7 @@ This endpoint is to enable get all updates.
 <br>
 **Sample API Response**
 
-```
+```javascript
     {status: ‘success’, data: {<JSON of farm updates>}}
 
 	{status: ‘failure’, message: ‘<error message from server>’}
@@ -82,7 +82,7 @@ This endpoint is to enable get all updates.
 
 ## Endpoint
 
-```
+```javascript
 /find?projectId=`${projectId}`
 ```
 
@@ -93,7 +93,7 @@ This endpoint is to enable get all updates.
 <br>
 **Parameters:**
 
-```
+```javascript
     Request parameter:
         -projectId (id of the farm in db)
 ```
@@ -104,7 +104,7 @@ This endpoint is to enable get all updates for a farm.
 <br>
 **Sample API Response**
 
-```
+```javascript
     {status: ‘success’, data: {<JSON of farm updates>}}
 
 	{status: ‘failure’, message: ‘<error message from server>’}
@@ -116,7 +116,7 @@ This endpoint is to enable get all updates for a farm.
 
 ## Endpoint
 
-```
+```javascript
 /find_one_update?updateId=`${updateId}`
 ```
 
@@ -127,7 +127,7 @@ This endpoint is to enable get all updates for a farm.
 <br>
 **Parameters:**
 
-```
+```javascript
     Request parameter:
         -projectId (id of the farm in db)
 ```
@@ -138,7 +138,7 @@ This endpoint is to enable get one update of a farm.
 <br>
 **Sample API Response**
 
-```
+```javascript
     {status: ‘success’, data: {<JSON of farm updates>}}
 
 	{status: ‘failure’, message: ‘<error message from server>’}
@@ -150,7 +150,7 @@ This endpoint is to enable get one update of a farm.
 
 ## Endpoint
 
-```
+```javascript
 /create
 ```
 
@@ -161,7 +161,7 @@ This endpoint is to enable get one update of a farm.
 <br>
 **Parameters:**
 
-```
+```javascript
         Request parameter:
             -projectId (id of the farm in db)
             -"title": "",
@@ -181,7 +181,7 @@ This endpoint is to enable creating updates for a farm.
 <br>
 **Sample API Response**
 
-```
+```javascript
     {status: ‘success’, data: {<JSON of farm update created>}}
 
 	{status: ‘failure’, message: ‘<error message from server>’}
@@ -192,7 +192,7 @@ This endpoint is to enable creating updates for a farm.
 
 ## Endpoint
 
-```
+```javascript
 /edit
 ```
 
@@ -203,7 +203,7 @@ This endpoint is to enable creating updates for a farm.
 <br>
 **Parameters:**
 
-```
+```javascript
         Request parameter:
             -projectId (id of the farm in db)
             -"title": "",
@@ -223,7 +223,7 @@ This endpoint is to enable creating updates for a farm.
 <br>
 **Sample API Response**
 
-```
+```javascript
     {status: ‘success’, data: {<JSON of farm updated>}}
 
 	{status: ‘failure’, message: ‘<error message from server>’}
@@ -234,7 +234,7 @@ This endpoint is to enable creating updates for a farm.
 
 ## Endpoint
 
-```
+```javascript
 /edit/images
 ```
 
@@ -245,7 +245,7 @@ This endpoint is to enable creating updates for a farm.
 <br>
 **Parameters:**
 
-```
+```javascript
         Request parameter:
             -updateId:  (id of the farm update in db)
             -src,
@@ -263,7 +263,7 @@ This endpoint is to enable updating an update images for a farm.
 <br>
 **Sample API Response**
 
-```
+```javascript
     {status: ‘success’, data: {<JSON of farm update updated>}}
 
 	{status: ‘failure’, message: ‘<error message from server>’}
@@ -275,7 +275,7 @@ This endpoint is to enable updating an update images for a farm.
 
 ## Endpoint
 
-```
+```javascript
 /edit/images
 ```
 
@@ -286,7 +286,7 @@ This endpoint is to enable updating an update images for a farm.
 <br>
 **Parameters:**
 
-```
+```javascript
         Request parameter:
                 -updateId:  (id of the farm update in db)
                 -url,
@@ -305,7 +305,7 @@ This endpoint is to enable updating an update videos for a farm.
 <br>
 **Sample API Response**
 
-```
+```javascript
     {status: ‘success’, data: {<JSON of farm update updated>}}
 
 	{status: ‘failure’, message: ‘<error message from server>’}
