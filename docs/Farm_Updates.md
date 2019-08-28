@@ -16,37 +16,42 @@ sidebar_label: Farm Updates
 ```javascript
     {
         project: {
-            id: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "Project"
-            },
-            farm_id: Number,
-    },
+                    id: {
+                        type: mongoose.Schema.Types.ObjectId,
+                        ref: "Project"
+                    },
+                    farm_id: Number,
+                },
 
-    images: [{
-        src: String,
-        title: String,
-        subtitle: String
-    }],
+        images: [
+                    {
+                        src: String,
+                        title: String,
+                        subtitle: String
+                    }
+                ],
 
-    videos: [{
-        url: String,
-        info: String,
-        description: String
-    }],
+        videos: [
+                    {
+                        url: String,
+                        info: String,
+                        description: String
+                    }
+                ],
 
-        title: String,
-        progress: Number,
-        week_number: Number,
-        activity: String,
-        stage: Number,
-        report: String,
-        description: String,
-        created_at: {type: Date, default: Date.now},
-        meta: {
-        created_at: {type: Date, default: Date.now},
-        updated_at: {type: Date, default: Date.now},
-     }
+                title: String,
+                progress: Number,
+                week_number: Number,
+                activity: String,
+                stage: Number,
+                report: String,
+                description: String,
+                created_at: {type: Date, default: Date.now},
+
+                meta: {
+                            created_at: {type: Date, default: Date.now},
+                            updated_at: {type: Date, default: Date.now},
+                     }
     }
 
 ```
