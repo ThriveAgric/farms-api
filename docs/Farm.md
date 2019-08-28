@@ -114,7 +114,27 @@ Make a url request to endpoint.
 
 <br>
 
-## View All Farms (UNAUTHORIZED USERS)
+## View All Open Farms
+
+> **GET**
+> /farms/open
+
+**Description:**  
+This is used to view all open farms(i.e. farms available to be funded)
+
+<br>
+**Sample API Response**
+
+```javascript
+
+    {status: 'success', statusCode:'001', message:"There are no open farms at the moment" }
+
+    {status: 'success', statusCode:'002', data:[List of open farms] }
+
+    {status: "error", message:"Could not fetch available farms at this time"}
+```
+
+<!-- ## View All Farms (UNAUTHORIZED USERS)
 
 ### Endpoint
 
@@ -126,7 +146,7 @@ Make a url request to endpoint.
 
 > GET
 
-**Description:**  
+**Description:**
 This will query all farms created
 
 <br>
@@ -164,7 +184,7 @@ This will query all farms created
 
 ```
 
-**Description:**  
+**Description:**
 This will query all farms created indicating whether the user is following a farm or not
 
 <br>
@@ -191,7 +211,7 @@ This will query all farms created indicating whether the user is following a far
 **Method Type**
 > GET
 
-**Description:**  
+**Description:**
 This will query all harvested farms
 
  <br>
@@ -216,7 +236,7 @@ This will query all harvested farms
 **Method Type**
 > GET
 
-**Description:**  
+**Description:**
 This will query all archived farms
 
 <br>
@@ -252,7 +272,7 @@ This will query all archived farms
 
 ```
 
-**Description:**  
+**Description:**
 This will query all farms created for a specific farm based on the id
 
 <br>
@@ -295,7 +315,7 @@ This will query all farms created for a specific farm based on the id
 
 ```
 
-**Description:**  
+**Description:**
 This will query all farms created for a specific farm based on the id
 
 <br>
@@ -335,7 +355,7 @@ This will query all farms created for a specific farm based on the id
 
 ```
 
-**Description:**  
+**Description:**
 This endpoint is to enable users subscribe/follow a farm
 
 <br>
@@ -375,7 +395,7 @@ This endpoint is to enable users subscribe/follow a farm
 
 ```
 
-**Description:**  
+**Description:**
 This endpoint is to enable users unsubscribe/unfollow a farm
 
 <br>
@@ -506,4 +526,4 @@ This endpoint fetches all farms a user has followed
     {status: ‘failure’, message: ‘<error message from server>’}
 
 
-```
+``` -->

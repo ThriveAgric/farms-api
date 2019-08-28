@@ -6,7 +6,7 @@ sidebar_label: Authentication
 
 You can authenticate your API calls by including your secret key in the Authorization header of every request you make.
 
-> Do ensure that you do not commit your secret API keys to git, or use them in your client-end code
+> Do ensure that you do not commit your secret keys to git, or use them in your client-end code
 
 <br>
 

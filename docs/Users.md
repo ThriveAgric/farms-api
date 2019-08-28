@@ -4,14 +4,17 @@ title: User Management Microservice
 sidebar_label: User
 ---
 
+## Staging Base URL
 
-The base Url for user management microservice is (https://thrive-user-auth.herokuapp.com/thr/userms/v1)
+```javascript
+"https://thrive-user-auth.herokuapp.com/thr/userms/v1";
+```
 
 ## Sample User Schema
 
 <!-- DOCUSAURUS_CODE_TABS -->
 
-```
+```javascript
 {
        id: UUID,
        first_name: String,
@@ -59,12 +62,39 @@ Make a url request to endpoint.
 { "message" : "API is up" }
 ```
 
-## Find All Users
+<br>
+
+## Register User
+
+> **POST**
+> /users/onboarding
+
+**Description:**
+This endpoint is used to register new users.
+
+**Parameters:**
+
+```javascript
+    Request body:
+        -first_name
+        -last_name
+        -password
+        -email
+```
+
+**API response:**
+
+```javascript
+ { status: "success", message:"user onboarding successful". On success, the client is sent a verification token.}
+{status: "failure", message:"User with the given email already exists"}
+```
+
+<!-- ## Find All Users
 
 > **GET**
 > /user
 
-**Description:**  
+**Description:**
 This will query all users in the database.
 
 **Parameters:**
@@ -88,7 +118,7 @@ headers:  {
 > **POST**
 > /login
 
-**Description:**  
+**Description:**
 This endpoint will enable users to log in.
 
 **Parameters:**
@@ -171,11 +201,11 @@ This will enable creation of users into the database.
 **Description:**
 Callback authenticated endpoint that will be used to verify user.
 
-**Action:**  
+**Action:**
 ( Have a route on the client that handles a call to the following route:
-`$CLIENTDOMAIN/sign/verify?token=${token}`  
-Sends user to the client when they click on verification link in their email.  
-The client should have a view listen for the query parameter of token on the above (`$CLIENTDOMAIN/sign/verify?token=${token}`) route, and then make a POST request to the server with the token as a query param to verify the user. If success you show the user a success message and redirect to login page, else tell them error token invalid or expired….show them link to generate new verification token)  
+`$CLIENTDOMAIN/sign/verify?token=${token}`
+Sends user to the client when they click on verification link in their email.
+The client should have a view listen for the query parameter of token on the above (`$CLIENTDOMAIN/sign/verify?token=${token}`) route, and then make a POST request to the server with the token as a query param to verify the user. If success you show the user a success message and redirect to login page, else tell them error token invalid or expired….show them link to generate new verification token)
 PS: Look at (/NEW_VERIFY_TOKEN) endpoint below.
 
 **Parameters:**
@@ -200,7 +230,7 @@ PS: Look at (/NEW_VERIFY_TOKEN) endpoint below.
 > **POST**
 > /new_verify_token
 
-**Description:**  
+**Description:**
 This endpoint generates a new verify token for a user and will send a mail to the user’s registered email with a link
 
 **Parameters:**
@@ -225,7 +255,7 @@ This endpoint generates a new verify token for a user and will send a mail to th
 > **POST**
 > /forgot_pword
 
-**Description:**  
+**Description:**
  This endpoint will cater for forgotten password and will send a mail to the user’s registered email with a reset link
 
 **Parameters:**
@@ -247,14 +277,14 @@ This endpoint generates a new verify token for a user and will send a mail to th
 
 ## Reset Password
 
-**Description:**  
+**Description:**
 Callback authenticated endpoint that will be used to replace existing password with new one.
 
-**Action:**  
-(Have a route on the client that handle a call to the following route:  
-`${CLIENTDOMAIN}/sign/resetpassword?token=${token}`  
-reset password: `$CLIENTDOMAIN/sign/resetpassword?token=${token}`  
-Consider sending user to the client when they click on reset link in their email, the client should have a view listen for the query parameter of token on the above route, and then make a request to the server with the token along with the new password(from a form) to reset the user password.  
+**Action:**
+(Have a route on the client that handle a call to the following route:
+`${CLIENTDOMAIN}/sign/resetpassword?token=${token}`
+reset password: `$CLIENTDOMAIN/sign/resetpassword?token=${token}`
+Consider sending user to the client when they click on reset link in their email, the client should have a view listen for the query parameter of token on the above route, and then make a request to the server with the token along with the new password(from a form) to reset the user password.
 If success you show the user a success message and a link to login, else tell them error).
 
 **Parameters:**
@@ -277,7 +307,7 @@ If success you show the user a success message and a link to login, else tell th
 > **POST**
 > /user/change_pword
 
-**Description:**  
+**Description:**
 Endpoint used to change a user password from their dashboard.
 
 **Parameters:**
@@ -308,7 +338,7 @@ Endpoint used to change a user password from their dashboard.
 > **POST**
 > /check-email
 
-**Description:**  
+**Description:**
 Endpoint used to check availability of an email.
 
 **Parameters:**
@@ -333,7 +363,7 @@ Endpoint used to check availability of an email.
 > **GET**
 > /user/find
 
-**Description:**  
+**Description:**
 This will query for a particular user in the database.
 
 **Parameters:**
@@ -358,7 +388,7 @@ This will query for a particular user in the database.
 > **PUT**
 > /user/update
 
-**Description:**  
+**Description:**
 This endpoint will enable user details to be updated.
 
 **Parameters:**
@@ -398,7 +428,7 @@ This is a protected route and will require access_token as authorization
 > /user/bank
 > (this single route is used to create and update user banking information )
 
-**Description:**  
+**Description:**
 This endpoint will enable user details to be updated.
 
 **Parameters:**
@@ -430,7 +460,7 @@ This endpoint will enable user details to be updated.
 > **GET**
 > /auth/checkauth
 
-**Description:**  
+**Description:**
 This endpoint checks if a user session is still valid.
 
 **Parameters:**
@@ -455,7 +485,7 @@ This endpoint checks if a user session is still valid.
 > **GET**
 > /auth/google
 
-**Description:**  
+**Description:**
 This endpoint starts logging user in via google oauth2.
 
 **API response:**
@@ -471,7 +501,7 @@ This endpoint starts logging user in via google oauth2.
 > **GET**
 > /auth/facebook
 
-**Description:**  
+**Description:**
 This endpoint starts logging user in via facebook login.
 
 **API response:**
@@ -480,4 +510,4 @@ This endpoint starts logging user in via facebook login.
  Success: On success a token is sent to {clientDomain/auth/{<token>}} as a token parameter from the server
 
  Error: handle error on client
-```
+``` -->

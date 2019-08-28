@@ -6,8 +6,8 @@ sidebar_label: Farm Updates
 
 ## Staging Base URL
 
-```
-https://thrive-farm-tracking.herokuapp.com/thr/project/v1/updates
+```javascript
+"https://thrive-farm-tracking.herokuapp.com/thr/project/v1/updates";
 ```
 
 <br>
@@ -52,7 +52,38 @@ https://thrive-farm-tracking.herokuapp.com/thr/project/v1/updates
 ```
 
 <br>
-## Get all Farms Updates
+
+<br>
+## Fetch Farm Activities for a Farm
+
+## Endpoint
+
+> **GET**
+> /farms/activities/find_one
+
+<br>
+**Parameters:**
+
+```javascript
+    Request parameter:
+        -projectId (id of the farm in db)
+```
+
+**Description:**  
+This endpoint is to enable retrieval of update on a particular farm.
+
+<br>
+
+**Sample API Response**
+
+```javascript
+    {status: "success", data: {<JSON of farm updates>}}
+
+	{status: "error", message:"Farm with the given projectId not found" }
+
+```
+
+<!-- ## Get all Farms Updates
 
 ## Endpoint
 
@@ -64,7 +95,7 @@ https://thrive-farm-tracking.herokuapp.com/thr/project/v1/updates
 
 > GET
 
-**Description:**  
+**Description:**
 This endpoint is to enable get all updates.
 
 <br>
@@ -98,54 +129,20 @@ This endpoint is to enable get all updates.
         -projectId (id of the farm in db)
 ```
 
-**Description:**  
+**Description:**
 This endpoint is to enable get all updates for a farm.
 
 <br>
 **Sample API Response**
 
-```javascript
+````javascript
     {status: ‘success’, data: {<JSON of farm updates>}}
 
 	{status: ‘failure’, message: ‘<error message from server>’}
 
-```
+``` -->
 
-<br>
-## Get one Update of a Farm
-
-## Endpoint
-
-```javascript
-/find_one_update?updateId=`${updateId}`
-```
-
-**Method Type**
-
-> GET
-
-<br>
-**Parameters:**
-
-```javascript
-    Request parameter:
-        -projectId (id of the farm in db)
-```
-
-**Description:**  
-This endpoint is to enable get one update of a farm.
-
-<br>
-**Sample API Response**
-
-```javascript
-    {status: ‘success’, data: {<JSON of farm updates>}}
-
-	{status: ‘failure’, message: ‘<error message from server>’}
-
-```
-
-<br>
+<!-- <br>
 ## Create Update for a Farm
 
 ## Endpoint
@@ -175,7 +172,7 @@ This endpoint is to enable get one update of a farm.
             - headers:  { access_token: JWT <access token> }
 ```
 
-**Description:**  
+**Description:**
 This endpoint is to enable creating updates for a farm.
 
 <br>
@@ -217,7 +214,7 @@ This endpoint is to enable creating updates for a farm.
             - headers:  { access_token: JWT <access token> }
 ```
 
-**Description:**  
+**Description:**
 This endpoint is to enable creating updates for a farm.
 
 <br>
@@ -257,7 +254,7 @@ This endpoint is to enable creating updates for a farm.
 ```
 
 <br>
-**Description:**  
+**Description:**
 This endpoint is to enable updating an update images for a farm.
 
 <br>
@@ -299,7 +296,7 @@ This endpoint is to enable updating an update images for a farm.
 ```
 
 <br>
-**Description:**  
+**Description:**
 This endpoint is to enable updating an update videos for a farm.
 
 <br>
@@ -340,7 +337,7 @@ This endpoint is to enable updating an update videos for a farm.
 ```
 
 <br>
-**Description:**  
+**Description:**
 This endpoint is to enable deleting an update for a farm.
 
 <br>
@@ -351,4 +348,4 @@ This endpoint is to enable deleting an update for a farm.
 
 	    {status: ‘failure’, message: ‘<error message from server>’}
 
-```
+``` -->
