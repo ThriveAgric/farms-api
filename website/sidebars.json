@@ -1,0 +1,13 @@
+{
+  "docs": {
+    "Guide": ["introduction", "how-to-start"],
+    "API Reference": [
+      "authentication",
+      "errors",
+      "farm",
+      "farmUpdates",
+      "users",
+      "transactions"
+    ]
+  }
+}
